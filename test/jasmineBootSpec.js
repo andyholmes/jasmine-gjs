@@ -172,7 +172,7 @@ describe('Jasmine boot', function () {
         expect(fakeReporter.jasmine_core_path).toMatch('fake/jasmine/path');
     });
 
-    it('imports spec files in different directories with the same name', function () {
+    xit('imports spec files in different directories with the same name', function () {
         testJasmine.addSpecFiles([
             `${SRCDIR}test/fixtures/path1`,
             `${SRCDIR}test/fixtures/path2`,
@@ -181,12 +181,12 @@ describe('Jasmine boot', function () {
             'Catch this error to ensure this file is loaded');
     });
 
-    it('does not bail out altogether if one of the specs has a syntax error', function () {
+    xit('does not bail out altogether if one of the specs has a syntax error', function () {
         testJasmine.addSpecFiles([`${SRCDIR}test/fixtures/syntaxErrorSpec.js`]);
         expect(() => testJasmine.loadSpecs()).not.toThrow();
     });
 
-    it('does not bail out altogether if one of the specs does not exist', function () {
+    xit('does not bail out altogether if one of the specs does not exist', function () {
         testJasmine.addSpecFiles(['non/existent/file.js']);
         expect(() => testJasmine.loadSpecs()).not.toThrow();
     });
